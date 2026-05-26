@@ -1543,6 +1543,7 @@ if (title === 'BuildPro') {
 export default function FreelancerLandingPage() {
 
 const [selectedProject, setSelectedProject] = useState(null)
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 const footerLink =
   "group relative block w-fit text-zinc-400 transition duration-300 hover:text-[#d7ff70]"
 const [scrollPosition, setScrollPosition] = useState(0)
@@ -1647,11 +1648,58 @@ if (selectedProject) {
   </a>
 </nav>
 
+<button
+  type="button"
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 transition-all duration-300 hover:border-[#d7ff70]/30 md:hidden"
+>
+  <span
+    className={`absolute h-0.5 w-5 ${mobileMenuOpen ? 'bg-[#d7ff70]' : 'bg-white'} transition-all duration-300 ${
+      mobileMenuOpen
+        ? 'rotate-45'
+        : '-translate-y-1.5'
+    }`}
+  />
+
+  <span
+    className={`absolute h-0.5 w-5 ${mobileMenuOpen ? 'bg-[#d7ff70]' : 'bg-white'} transition-all duration-300 ${
+      mobileMenuOpen
+        ? 'opacity-0'
+        : 'opacity-100'
+    }`}
+  />
+
+  <span
+    className={`absolute h-0.5 w-5 ${mobileMenuOpen ? 'bg-[#d7ff70]' : 'bg-white'} transition-all duration-300 ${
+      mobileMenuOpen
+        ? '-rotate-45'
+        : 'translate-y-1.5'
+    }`}
+  />
+</button>
+
           <a href="#kontakt" className="rounded-full bg-[#d7ff70] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(215,255,112,0.25)] transition hover:scale-[1.03]">
             Darmowa wycena
           </a>
         </div>
       </header>
+
+   <div
+  className={`fixed left-0 right-0 top-[82px] z-40 border-b border-white/10 bg-[#080808]/95 px-6 py-5 backdrop-blur-2xl transition-all duration-300 md:hidden ${
+    mobileMenuOpen
+      ? 'pointer-events-auto translate-y-0 opacity-100'
+      : 'pointer-events-none -translate-y-4 opacity-0'
+  }`}
+>
+  <div className="flex flex-col gap-4 text-sm font-bold text-zinc-300">
+    <a href="#oferta" onClick={() => setMobileMenuOpen(false)}>Oferta</a>
+    <a href="#proces" onClick={() => setMobileMenuOpen(false)}>Proces</a>
+    <a href="#portfolio" onClick={() => setMobileMenuOpen(false)}>Portfolio</a>
+    <a href="#cennik" onClick={() => setMobileMenuOpen(false)}>Cennik</a>
+    <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+    <a href="#kontakt" onClick={() => setMobileMenuOpen(false)}>Kontakt</a>
+  </div>
+</div>
 
       <main className="overflow-hidden pt-24">
         <section className="relative px-6 py-24 lg:py-32">
@@ -1735,7 +1783,7 @@ if (selectedProject) {
           </div>
         </section>
 
-        <section id="oferta" className="px-6 py-24 lg:py-32">
+        <section id="oferta" className="px-6 py-24 lg:py-32 scroll-mt-28">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
@@ -1759,7 +1807,7 @@ if (selectedProject) {
           </div>
         </section>
 
-        <section id="proces" className="border-y border-white/10 bg-[#0f0f0f] px-6 py-24 text-white lg:py-32">
+        <section id="proces" className="border-y border-white/10 bg-[#0f0f0f] px-6 py-24 text-white lg:py-32 scroll-mt-28">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 max-w-3xl">
               <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#d7ff70]">Proces</p>
@@ -1778,7 +1826,7 @@ if (selectedProject) {
           </div>
         </section>
 
-        <section id="portfolio" className="px-6 py-24 lg:py-32">
+        <section id="portfolio" className="px-6 py-24 lg:py-32 scroll-mt-28">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
               <div className="max-w-3xl">
@@ -1863,7 +1911,7 @@ if (selectedProject) {
           </div>
         </section>
 
-           <section id="cennik" className="px-6 py-24 lg:py-32">
+           <section id="cennik" className="px-6 py-24 lg:py-32 scroll-mt-28">
   <div className="mx-auto max-w-7xl">
     <div className="mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
       <div className="max-w-3xl">
@@ -1968,7 +2016,7 @@ if (selectedProject) {
   </div>
 </section>
 
-<section id="faq" className="px-6 py-24">
+<section id="faq" className="px-6 py-24 scroll-mt-28">
   <div className="mx-auto max-w-5xl">
     <div className="text-center">
       <p className="text-sm font-black uppercase tracking-[0.25em] text-[#d7ff70]">
@@ -2111,7 +2159,7 @@ if (selectedProject) {
 
 
 
-        <section id="kontakt" className="px-6 pb-24 lg:pb-32">
+        <section id="kontakt" className="px-6 pb-24 lg:pb-32 scroll-mt-28">
   <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
     <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-10 md:p-14">
       <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#d7ff70]">
