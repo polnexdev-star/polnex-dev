@@ -1797,9 +1797,10 @@ if (selectedProject) {
       type="button"
       key={project.title}
       onClick={() => {
-        setScrollPosition(window.scrollY)
-        setSelectedProject(project)
-      }}
+  setScrollPosition(window.scrollY)
+  setSelectedProject(project)
+  window.scrollTo(0, 0)
+}}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] text-left transition duration-500 hover:-translate-y-2 hover:border-[#d7ff70]/40 hover:bg-white/[0.06] hover:shadow-[0_0_60px_rgba(215,255,112,0.08)]"
     >
       <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
