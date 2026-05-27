@@ -1550,6 +1550,27 @@ const [scrollPosition, setScrollPosition] = useState(0)
 const formRef = useRef();
 const [formStatus, setFormStatus] = useState('')
 
+useEffect(() => {
+  const handlePopState = () => {
+    if (!selectedProject) return
+
+    setSelectedProject(null)
+
+    window.history.replaceState(null, '', '/')
+
+    setTimeout(() => {
+      window.scrollTo(0, scrollPosition)
+    }, 50)
+  }
+
+  window.addEventListener('popstate', handlePopState)
+
+  return () => {
+    window.removeEventListener('popstate', handlePopState)
+  }
+}, [selectedProject, scrollPosition])
+
+
 const sendEmail = (e) => {
   e.preventDefault();
 
@@ -1577,15 +1598,8 @@ if (selectedProject) {
       industry={selectedProject.category}
       description={selectedProject.description}
       onBack={() => {
-  setSelectedProject(null)
-
-  setTimeout(() => {
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: 'smooth',
-    })
-  }, 0)
-}}
+        window.history.back()
+      }}
     />
   )
 }
@@ -1847,6 +1861,13 @@ if (selectedProject) {
       onClick={() => {
   setScrollPosition(window.scrollY)
   setSelectedProject(project)
+
+  window.history.pushState(
+    { demoOpen: true },
+    '',
+    `#demo-${project.title.toLowerCase().replaceAll(' ', '-')}`
+  )
+
   window.scrollTo(0, 0)
 }}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] text-left transition duration-500 hover:-translate-y-2 hover:border-[#d7ff70]/40 hover:bg-white/[0.06] hover:shadow-[0_0_60px_rgba(215,255,112,0.08)]"
