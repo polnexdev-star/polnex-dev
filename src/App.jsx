@@ -942,7 +942,7 @@ if (title === 'AutoFix Garage') {
   </div>
 </section>
 
-   <section id="kontakt-auto" className="mx-auto max-w-7xl px-6 py-20 scroll-mt-28">
+   <section id="kontakt-auto" className="mx-auto max-w-7xl px-5 py-20 scroll-mt-28 md:px-6">
   <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
     <div className="rounded-[3rem] bg-white p-10 shadow-sm md:p-14">
       <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-500">
@@ -1013,7 +1013,7 @@ if (title === 'AutoFix Garage') {
       </div>
     </div>
 
-    <div className="rounded-[3rem] bg-[#101214] p-8 text-white md:p-10">
+    <div className="mx-auto w-full max-w-[340px] rounded-[2rem] bg-[#101214] p-8 text-white md:max-w-none md:rounded-[3rem] md:p-12">
       <h3 className="text-3xl font-black">
         Formularz kontaktowy
       </h3>
@@ -1041,7 +1041,10 @@ if (title === 'AutoFix Garage') {
           placeholder="Opisz problem"
         />
 
-        <button className="rounded-2xl bg-orange-500 px-6 py-4 font-black text-white">
+        <button
+  type="button"
+  className="cursor-pointer rounded-2xl bg-orange-500 px-6 py-4 font-black text-white transition hover:bg-orange-600"
+>
           Wyślij zapytanie
         </button>
       </div>
