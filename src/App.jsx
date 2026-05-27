@@ -1151,7 +1151,7 @@ if (title === 'BuildPro') {
         </div>
       </header>
 
-      <section className="relative overflow-hidden px-6 py-28 lg:py-36">
+      <section className="relative overflow-hidden px-6 py-20 lg:py-36">
         <div className="absolute left-1/2 top-0 h-[760px] w-[760px] -translate-x-1/2 rounded-full bg-yellow-400/20 blur-[170px]" />
         <div className="absolute right-0 top-48 h-[420px] w-[420px] rounded-full bg-orange-500/10 blur-[120px]" />
 
@@ -1161,8 +1161,7 @@ if (title === 'BuildPro') {
               Pakiet Premium / Custom Website
             </p>
 
-            <h1 className="max-w-5xl text-6xl font-black leading-[0.86] tracking-[-0.075em] md:text-8xl">
-              Strona premium dla firmy, która chce wyglądać jak lider rynku.
+            <h1 className="max-w-5xl text-5xl font-black leading-[0.86] tracking-[-0.075em] md:text-8xl">
             </h1>
 
             <p className="mt-9 max-w-2xl text-xl leading-9 text-zinc-400">
