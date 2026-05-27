@@ -105,6 +105,12 @@ const process = [
     description: 'Szybka strona one-page z ofertą, godzinami otwarcia i przyciskiem kontaktu.',
     image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop',
     tags: ['Mini', 'One-page', 'Kontakt'],
+    caseStudy: {
+  goal: 'Pozyskiwanie nowych klientów i szybki kontakt.',
+  scope: 'Projekt one-page, oferta, godziny otwarcia, mapa i CTA.',
+  tech: 'React, Tailwind CSS',
+  result: 'Nowoczesna wizytówka online zwiększająca liczbę rezerwacji.',
+},
   },
   {
     title: 'Glow Studio',
@@ -113,6 +119,12 @@ const process = [
     description: 'Elegancki landing page beauty z ofertą usług, opiniami i CTA do rezerwacji.',
     image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop',
     tags: ['Starter', 'Beauty', 'Landing'],
+    caseStudy: {
+  goal: 'Prezentacja usług beauty i zwiększenie liczby zapisów.',
+  scope: 'Landing page, opinie klientek, oferta zabiegów i CTA.',
+  tech: 'React, Tailwind CSS',
+  result: 'Elegancka strona budująca zaufanie i zachęcająca do kontaktu.',
+},
   },
   {
     title: 'AutoFix Garage',
@@ -121,6 +133,12 @@ const process = [
     description: 'Strona usługowa z ofertą napraw, zaufaniem, lokalizacją i formularzem kontaktowym.',
     image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1200&auto=format&fit=crop',
     tags: ['Business', 'Usługi', 'Mobile'],
+    caseStudy: {
+  goal: 'Pozyskiwanie klientów lokalnie i prezentacja usług.',
+  scope: 'Oferta napraw, formularz kontaktowy, mapa i sekcja zaufania.',
+  tech: 'React, Tailwind CSS, Formspree',
+  result: 'Profesjonalna strona usługowa zwiększająca liczbę zapytań.',
+},
   },
   {
     title: 'BuildPro',
@@ -129,10 +147,16 @@ const process = [
     description: 'Rozbudowana strona premium z portfolio realizacji, procesem, formularzem wyceny i mocnym designem.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop',
     tags: ['Premium', 'Firma', 'SEO'],
+    caseStudy: {
+  goal: 'Budowa silnego wizerunku firmy budowlanej.',
+  scope: 'Strona premium, realizacje, proces współpracy, formularz wyceny.',
+  tech: 'React, Tailwind CSS, CMS',
+  result: 'Nowoczesna prezentacja marki zwiększająca wiarygodność firmy.',
+},
   },
 ]
 
-function DemoPage({ title, industry, description, onBack }) {
+function DemoPage({ title, industry, description, caseStudy, onBack }) {
   const [isLoading, setIsLoading] = useState(title === 'BuildPro')
   const statsRef = useRef(null)
   const [statsVisible, setStatsVisible] = useState(false)
@@ -231,9 +255,17 @@ if (title === 'Sharp Barber') {
             ← Wróć
           </button>
           <div className="text-2xl font-black">Sharp Barber</div>
-          <a href="#kontakt" className="rounded-full bg-white px-5 py-3 text-sm font-black text-black">
-            Rezerwuj
-          </a>
+          <button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('kontakt-barber')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="cursor-pointer rounded-full bg-white px-5 py-3 text-sm font-black text-black"
+>
+  Rezerwuj
+</button>
         </div>
       </header>
 
@@ -275,7 +307,57 @@ if (title === 'Sharp Barber') {
         ))}
       </section>
 
-      <section id="kontakt" className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
+  <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 md:p-10">
+    <h2 className="text-3xl font-black">
+      Case Study
+    </h2>
+
+    <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <div>
+        <div className="text-xs font-black uppercase tracking-[0.22em] text-amber-400">
+          Cel projektu
+        </div>
+
+        <p className="mt-3 text-zinc-400">
+          {caseStudy.goal}
+        </p>
+      </div>
+
+      <div>
+        <div className="text-xs font-black uppercase tracking-[0.22em] text-amber-400">
+          Zakres prac
+        </div>
+
+        <p className="mt-3 text-zinc-400">
+          {caseStudy.scope}
+        </p>
+      </div>
+
+      <div>
+        <div className="text-xs font-black uppercase tracking-[0.22em] text-amber-400">
+          Technologie
+        </div>
+
+        <p className="mt-3 text-zinc-400">
+          {caseStudy.tech}
+        </p>
+      </div>
+
+      <div>
+        <div className="text-xs font-black uppercase tracking-[0.22em] text-amber-400">
+          Efekt
+        </div>
+
+        <p className="mt-3 text-zinc-400">
+          {caseStudy.result}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="kontakt-barber" className="mx-auto max-w-6xl px-6 py-16">
         <div className="rounded-[2rem] bg-white p-8 text-black md:p-12">
           <h2 className="text-4xl font-black">Godziny i kontakt</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -306,24 +388,49 @@ if (title === 'Sharp Barber') {
             Glow Studio
           </div>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium text-[#7c6d66] md:flex">
-            <a href="#oferta-glow" className="transition hover:text-[#2a211d]">
-              Oferta
-            </a>
-            <a href="#opinie-glow" className="transition hover:text-[#2a211d]">
-              Opinie
-            </a>
-            <a href="#rezerwacja" className="transition hover:text-[#2a211d]">
-              Rezerwacja
-            </a>
-          </nav>
+         <nav className="hidden items-center gap-8 text-sm font-medium text-[#7c6d66] md:flex">
+  <button
+    type="button"
+    onClick={() =>
+      document.getElementById('oferta-glow')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="cursor-pointer transition hover:text-[#2a211d]"
+  >
+    Oferta
+  </button>
 
-          <a
-            href="#rezerwacja"
-            className="rounded-full bg-[#2a211d] px-6 py-3 text-sm font-medium tracking-wide text-white transition hover:opacity-90"
-          >
-            Umów wizytę
-          </a>
+  <button
+    type="button"
+    onClick={() =>
+      document.getElementById('opinie-glow')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="cursor-pointer transition hover:text-[#2a211d]"
+  >
+    Opinie
+  </button>
+
+  <button
+    type="button"
+    onClick={() =>
+      document.getElementById('rezerwacja')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="cursor-pointer transition hover:text-[#2a211d]"
+  >
+    Rezerwacja
+  </button>
+</nav>
+
+          <button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('rezerwacja')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="rounded-full bg-[#2a211d] px-6 py-3 text-sm font-medium tracking-wide text-white transition hover:opacity-90"
+>
+  Umów wizytę
+</button>
         </div>
       </header>
 
@@ -343,19 +450,25 @@ if (title === 'Sharp Barber') {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#rezerwacja"
-              className="rounded-full bg-[#2a211d] px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition hover:opacity-90"
-            >
-              Umów wizytę
-            </a>
+            <button
+  type="button"
+  onClick={() =>
+    document.getElementById('rezerwacja')?.scrollIntoView({ behavior: 'smooth' })
+  }
+  className="cursor-pointer rounded-full bg-[#2a211d] px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition hover:opacity-90"
+>
+  Umów wizytę
+</button>
 
-            <a
-              href="#oferta-glow"
-              className="rounded-full border border-[#2a211d]/15 px-8 py-4 text-sm font-medium uppercase tracking-[0.2em]"
-            >
-              Oferta
-            </a>
+            <button
+  type="button"
+  onClick={() =>
+    document.getElementById('oferta-glow')?.scrollIntoView({ behavior: 'smooth' })
+  }
+  className="cursor-pointer rounded-full border border-[#2a211d]/15 px-8 py-4 text-sm font-medium uppercase tracking-[0.2em]"
+>
+  Oferta
+</button>
           </div>
         </div>
 
@@ -507,26 +620,50 @@ if (title === 'AutoFix Garage') {
           </div>
 
           <nav className="hidden items-center gap-7 text-sm font-bold text-zinc-600 md:flex">
-            <a href="#uslugi-auto" className="transition hover:text-black">
-              Usługi
-            </a>
-            <a href="#dlaczego-auto" className="transition hover:text-black">
-              Dlaczego my?
-            </a>
-            <a href="#opinie-auto" className="transition hover:text-black">
-              Opinie
-            </a>
-            <a href="#kontakt-auto" className="transition hover:text-black">
-              Kontakt
-            </a>
+            <button
+  type="button"
+  onClick={() => document.getElementById('uslugi-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer transition hover:text-black"
+>
+  Usługi
+</button>
+
+<button
+  type="button"
+  onClick={() => document.getElementById('dlaczego-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer transition hover:text-black"
+>
+  Dlaczego my?
+</button>
+
+<button
+  type="button"
+  onClick={() => document.getElementById('opinie-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer transition hover:text-black"
+>
+  Opinie
+</button>
+
+<button
+  type="button"
+  onClick={() => document.getElementById('kontakt-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer transition hover:text-black"
+>
+  Kontakt
+</button>
           </nav>
 
-          <a
-            href="#kontakt-auto"
-            className="rounded-full bg-[#101214] px-5 py-3 text-sm font-black text-white transition hover:bg-zinc-800"
-          >
-            Umów naprawę
-          </a>
+          <button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('kontakt-auto')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="rounded-full bg-[#101214] px-5 py-3 text-sm font-black text-white transition hover:bg-zinc-800"
+>
+  Umów naprawę
+</button>
         </div>
       </header>
 
@@ -547,19 +684,21 @@ if (title === 'AutoFix Garage') {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#kontakt-auto"
-              className="rounded-full bg-orange-500 px-8 py-4 font-black text-white transition hover:bg-orange-600"
-            >
-              Umów naprawę
-            </a>
+            <button
+  type="button"
+  onClick={() => document.getElementById('kontakt-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer rounded-full bg-orange-500 px-8 py-4 font-black text-white transition hover:bg-orange-600"
+>
+  Umów naprawę
+</button>
 
-            <a
-              href="#uslugi-auto"
-              className="rounded-full border border-black/15 px-8 py-4 font-black transition hover:bg-white"
-            >
-              Zobacz usługi
-            </a>
+            <button
+  type="button"
+  onClick={() => document.getElementById('uslugi-auto')?.scrollIntoView({ behavior: 'smooth' })}
+  className="cursor-pointer rounded-full border border-black/15 px-8 py-4 font-black transition hover:bg-white"
+>
+  Zobacz usługi
+</button>
           </div>
 
           <div className="mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
@@ -892,19 +1031,61 @@ if (title === 'BuildPro') {
           </div>
 
           <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-400 md:flex">
-            <a href="#premium-oferta" className="transition hover:text-yellow-400">Oferta</a>
-            <a href="#premium-realizacje" className="transition hover:text-yellow-400">Realizacje</a>
-            <a href="#premium-proces" className="transition hover:text-yellow-400">Proces</a>
-            <a href="#premium-cms" className="transition hover:text-yellow-400">CMS</a>
-            <a href="#premium-wycena" className="transition hover:text-yellow-400">Wycena</a>
-          </nav>
+  <button
+    type="button"
+    onClick={() => document.getElementById('premium-oferta')?.scrollIntoView({ behavior: 'smooth' })}
+    className="cursor-pointer transition hover:text-yellow-400"
+  >
+    Oferta
+  </button>
 
-          <a
-            href="#premium-wycena"
-            className="rounded-full bg-yellow-400 px-6 py-3 text-sm font-black text-black shadow-[0_0_40px_rgba(250,204,21,0.25)] transition hover:scale-[1.03]"
-          >
-            Zapytaj o wycenę
-          </a>
+  <button
+    type="button"
+    onClick={() => document.getElementById('premium-realizacje')?.scrollIntoView({ behavior: 'smooth' })}
+    className="cursor-pointer transition hover:text-yellow-400"
+  >
+    Realizacje
+  </button>
+
+  <button
+    type="button"
+    onClick={() => document.getElementById('premium-proces')?.scrollIntoView({ behavior: 'smooth' })}
+    className="cursor-pointer transition hover:text-yellow-400"
+  >
+    Proces
+  </button>
+
+  <button
+    type="button"
+    onClick={() => document.getElementById('premium-cms')?.scrollIntoView({ behavior: 'smooth' })}
+    className="cursor-pointer transition hover:text-yellow-400"
+  >
+    CMS
+  </button>
+
+  <button
+    type="button"
+    onClick={() => document.getElementById('premium-wycena')?.scrollIntoView({ behavior: 'smooth' })}
+    className="cursor-pointer transition hover:text-yellow-400"
+  >
+    Wycena
+  </button>
+</nav>
+
+         <button
+  type="button"
+  onClick={(e) => {
+    e.preventDefault()
+    e.stopPropagation()
+
+    document
+      .getElementById('premium-wycena')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="cursor-pointer rounded-full bg-yellow-400 px-6 py-3 text-sm font-black text-black shadow-[0_0_40px_rgba(250,204,21,0.25)] transition hover:scale-[1.03]"
+>
+  Zapytaj o wycenę
+</button>
         </div>
       </header>
 
@@ -929,19 +1110,29 @@ if (title === 'BuildPro') {
             </p>
 
             <div className="mt-11 flex flex-wrap gap-4">
-              <a
-                href="#premium-wycena"
-                className="rounded-full bg-yellow-400 px-8 py-4 font-black text-black shadow-[0_0_60px_rgba(250,204,21,0.25)] transition hover:scale-[1.02]"
-              >
-                Poproś o wycenę
-              </a>
+              <button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('premium-wycena')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="cursor-pointer rounded-full bg-yellow-400 px-8 py-4 font-black text-black shadow-[0_0_60px_rgba(250,204,21,0.25)] transition hover:scale-[1.02]"
+>
+  Poproś o wycenę
+</button>
 
-              <a
-                href="#premium-realizacje"
-                className="rounded-full border border-white/15 bg-white/5 px-8 py-4 font-black text-white transition hover:bg-white/10"
-              >
-                Zobacz realizacje
-              </a>
+<button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('premium-realizacje')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+  className="cursor-pointer rounded-full border border-white/15 bg-white/5 px-8 py-4 font-black text-white transition hover:bg-white/10"
+>
+  Zobacz realizacje
+</button>
             </div>
             <div ref={statsRef} className="mt-16 grid max-w-3xl gap-4 sm:grid-cols-3">
   {[
@@ -1594,13 +1785,14 @@ const sendEmail = (e) => {
 if (selectedProject) {
   return (
     <DemoPage
-      title={selectedProject.title}
-      industry={selectedProject.category}
-      description={selectedProject.description}
-      onBack={() => {
-        window.history.back()
-      }}
-    />
+  title={selectedProject.title}
+  industry={selectedProject.category}
+  description={selectedProject.description}
+  caseStudy={selectedProject.caseStudy}
+  onBack={() => {
+    window.history.back()
+  }}
+/>
   )
 }
 
