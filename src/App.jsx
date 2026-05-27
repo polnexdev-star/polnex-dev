@@ -559,6 +559,37 @@ if (title === 'Sharp Barber') {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-16">
+  <div className="rounded-[3rem] bg-white p-10 shadow-sm md:p-14">
+    <p className="text-sm font-medium uppercase tracking-[0.35em] text-[#c89ca5]">
+      Case Study
+    </p>
+
+    <h2 className="mt-5 text-5xl font-semibold tracking-[-0.05em]">
+      Co pokazuje ten projekt?
+    </h2>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-2">
+      {[
+        ['Cel projektu', caseStudy.goal],
+        ['Zakres prac', caseStudy.scope],
+        ['Technologie', caseStudy.tech],
+        ['Efekt', caseStudy.result],
+      ].map(([label, text]) => (
+        <div key={label} className="rounded-[2rem] bg-[#f8f1ec] p-7">
+          <div className="text-xs font-medium uppercase tracking-[0.3em] text-[#c89ca5]">
+            {label}
+          </div>
+
+          <p className="mt-4 leading-8 text-[#7c6d66]">
+            {text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       <section id="rezerwacja" className="mx-auto max-w-7xl px-6 py-20 scroll-mt-28">
         <div className="grid overflow-hidden rounded-[3rem] bg-white shadow-xl lg:grid-cols-[0.9fr_1.1fr]">
           <div className="p-10 md:p-16">
@@ -879,6 +910,37 @@ if (title === 'AutoFix Garage') {
           ))}
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16">
+  <div className="rounded-[3rem] bg-[#101214] p-10 text-white md:p-14">
+    <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-500">
+      Case Study
+    </p>
+
+    <h2 className="mt-5 text-5xl font-black tracking-[-0.05em]">
+      Co pokazuje ten projekt?
+    </h2>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-2">
+      {[
+        ['Cel projektu', caseStudy.goal],
+        ['Zakres prac', caseStudy.scope],
+        ['Technologie', caseStudy.tech],
+        ['Efekt', caseStudy.result],
+      ].map(([label, text]) => (
+        <div key={label} className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-7">
+          <div className="text-xs font-black uppercase tracking-[0.22em] text-orange-500">
+            {label}
+          </div>
+
+          <p className="mt-4 leading-8 text-zinc-400">
+            {text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
    <section id="kontakt-auto" className="mx-auto max-w-7xl px-6 py-20 scroll-mt-28">
   <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -1536,6 +1598,45 @@ if (title === 'BuildPro') {
           ))}
         </div>
       </section>
+
+          <section className="mx-auto max-w-7xl px-6 py-20">
+  <div className="overflow-hidden rounded-[3rem] border border-yellow-400/15 bg-gradient-to-br from-[#111111] to-[#1a1a1a] p-10 md:p-14">
+    <p className="text-sm font-black uppercase tracking-[0.3em] text-yellow-400">
+      Case Study
+    </p>
+
+    <h2 className="mt-5 text-5xl font-black tracking-[-0.05em] text-white md:text-6xl">
+      Jak wygląda projekt Premium?
+    </h2>
+
+    <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+      Pakiet Premium jest przeznaczony dla firm, które chcą wyróżnić się na tle konkurencji,
+      budować zaufanie i generować więcej wartościowych zapytań.
+    </p>
+
+    <div className="mt-12 grid gap-6 md:grid-cols-2">
+      {[
+        ['Cel projektu', caseStudy.goal],
+        ['Zakres prac', caseStudy.scope],
+        ['Technologie', caseStudy.tech],
+        ['Efekt', caseStudy.result],
+      ].map(([label, text]) => (
+        <div
+          key={label}
+          className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
+        >
+          <div className="text-xs font-black uppercase tracking-[0.25em] text-yellow-400">
+            {label}
+          </div>
+
+          <p className="mt-4 leading-8 text-zinc-300">
+            {text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section id="premium-wycena" className="mx-auto max-w-7xl px-6 py-24 scroll-mt-28">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
