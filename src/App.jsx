@@ -1987,14 +1987,14 @@ if (selectedProject) {
   />
 </button>
 
-          <a href="#kontakt" className="hidden rounded-full bg-[#d7ff70] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(215,255,112,0.25)] transition hover:scale-[1.03] sm:flex">
+          <a href="#kontakt" className="hidden rounded-full bg-[#d7ff70] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(215,255,112,0.25)] transition hover:scale-[1.03] lg:flex">
             Darmowa wycena
           </a>
         </div>
       </header>
 
    <div
-  className={`fixed left-0 right-0 top-[82px] z-40 border-b border-white/10 bg-[#080808]/95 px-6 py-5 backdrop-blur-2xl transition-all duration-300 md:hidden ${
+  className={`fixed left-0 right-0 top-[82px] z-40 border-b border-white/10 bg-[#080808]/95 px-6 py-5 backdrop-blur-2xl transition-all duration-300 lg:hidden ${
     mobileMenuOpen
       ? 'pointer-events-auto translate-y-0 opacity-100'
       : 'pointer-events-none -translate-y-4 opacity-0'
