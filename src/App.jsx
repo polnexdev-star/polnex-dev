@@ -179,21 +179,11 @@ function DemoPage({ title, industry, description, caseStudy, onBack }) {
   useEffect(() => {
   if (title !== 'BuildPro' || isLoading) return
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setStatsVisible(true)
-        observer.disconnect()
-      }
-    },
-    { threshold: 0.1 }
-  )
+  const timer = setTimeout(() => {
+    setStatsVisible(true)
+  }, 600)
 
-  if (statsRef.current) {
-    observer.observe(statsRef.current)
-  }
-
-  return () => observer.disconnect()
+  return () => clearTimeout(timer)
 }, [title, isLoading])
 
 useEffect(() => {
@@ -2265,10 +2255,10 @@ if (selectedProject) {
           }`}
         >
           {plan.highlighted && (
-            <div className="absolute right-5 top-5 rounded-full bg-[#d7ff70] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-black">
-              Popularny
-            </div>
-          )}
+  <div className="mb-5 w-fit rounded-full bg-[#d7ff70] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-black">
+    Popularny
+  </div>
+)}
 
           <p className="text-sm font-black uppercase tracking-[0.22em] text-[#d7ff70]">
             {plan.tag}
