@@ -1907,7 +1907,7 @@ if (selectedProject) {
             Polnex<span className="text-[#d7ff70]">.dev</span>
           </a>
 
-         <nav className="hidden items-center gap-10 text-[15px] font-semibold tracking-wide text-zinc-300 md:flex">
+         <nav className="hidden items-center gap-8 text-[15px] font-semibold tracking-wide text-zinc-300 lg:flex">
   <a
     href="#oferta"
     className="group relative transition duration-300 hover:text-[#d7ff70]"
@@ -1960,7 +1960,7 @@ if (selectedProject) {
 <button
   type="button"
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-  className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 transition-all duration-300 hover:border-[#d7ff70]/30 md:hidden"
+  className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 transition-all duration-300 hover:border-[#d7ff70]/30 lg:hidden"
 >
   <span
     className={`absolute h-0.5 w-5 ${mobileMenuOpen ? 'bg-[#d7ff70]' : 'bg-white'} transition-all duration-300 ${
@@ -1987,7 +1987,7 @@ if (selectedProject) {
   />
 </button>
 
-          <a href="#kontakt" className="rounded-full bg-[#d7ff70] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(215,255,112,0.25)] transition hover:scale-[1.03]">
+          <a href="#kontakt" className="hidden rounded-full bg-[#d7ff70] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(215,255,112,0.25)] transition hover:scale-[1.03] sm:flex">
             Darmowa wycena
           </a>
         </div>
@@ -2007,6 +2007,13 @@ if (selectedProject) {
     <a href="#cennik" onClick={() => setMobileMenuOpen(false)}>Cennik</a>
     <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
     <a href="#kontakt" onClick={() => setMobileMenuOpen(false)}>Kontakt</a>
+    <a
+  href="#kontakt"
+  onClick={() => setMobileMenuOpen(false)}
+  className="mt-3 rounded-2xl bg-[#d7ff70] px-5 py-4 text-center font-black text-black"
+>
+  Darmowa wycena
+</a>
   </div>
 </div>
 
