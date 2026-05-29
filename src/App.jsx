@@ -2508,7 +2508,7 @@ if (selectedProject) {
         </a>
 
         <a
-          href="mailto:polnex.dev@gmail.com"
+          href="mailto:kontakt@polnexdev.pl"
           className="group flex items-center justify-between rounded-2xl border border-white/10 bg-black/30 p-5 transition hover:border-[#d7ff70]/30"
         >
           <div>
@@ -2516,7 +2516,7 @@ if (selectedProject) {
               Email
             </div>
             <div className="mt-2 text-lg font-black text-white transition group-hover:text-[#d7ff70]">
-              polnex.dev@gmail.com
+              kontakt@polnexdev.pl
             </div>
           </div>
 
@@ -2713,8 +2713,8 @@ if (selectedProject) {
     <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#d7ff70] transition-all duration-300 group-hover:w-full"></span>
   </a>
 
-  <a href="mailto:polnex.dev@gmail.com" className={footerLink}>
-    polnex.dev@gmail.com
+  <a href="mailto:kontakt@polnexdev.pl" className={footerLink}>
+    kontakt@polnexdev.pl
     <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#d7ff70] transition-all duration-300 group-hover:w-full"></span>
   </a>
 
