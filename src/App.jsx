@@ -1923,6 +1923,14 @@ if (selectedProject) {
   </a>
 
   <a
+  href="#realizacje"
+  className="group relative transition duration-300 hover:text-[#d7ff70]"
+>
+  Realizacje
+  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#d7ff70] transition-all duration-300 group-hover:w-full"></span>
+</a>
+
+  <a
     href="#cennik"
     className="group relative transition duration-300 hover:text-[#d7ff70]"
   >
@@ -1994,6 +2002,9 @@ if (selectedProject) {
     <a href="#oferta" onClick={() => setMobileMenuOpen(false)}>Oferta</a>
     <a href="#proces" onClick={() => setMobileMenuOpen(false)}>Proces</a>
     <a href="#portfolio" onClick={() => setMobileMenuOpen(false)}>Portfolio</a>
+    <a href="#realizacje" onClick={() => setMobileMenuOpen(false)}>
+  Realizacje
+</a>
     <a href="#cennik" onClick={() => setMobileMenuOpen(false)}>Cennik</a>
     <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
     <a href="#kontakt" onClick={() => setMobileMenuOpen(false)}>Kontakt</a>
@@ -2223,6 +2234,94 @@ if (selectedProject) {
 </div>
           </div>
         </section>
+
+        <section id="realizacje" className="px-6 py-24 lg:py-32 scroll-mt-28">
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-16 max-w-3xl">
+      <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#d7ff70]">
+        Realizacje
+      </p>
+
+      <h2 className="text-4xl font-black tracking-[-0.04em] md:text-6xl">
+        Projekty wykonane dla klientów.
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-zinc-400">
+        Poniżej znajdziesz strony internetowe wykonane dla realnych firm.
+      </p>
+    </div>
+
+    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition duration-500 hover:border-[#d7ff70]/30">
+      <div className="p-8 md:p-12">
+        <div className="mb-4 inline-flex rounded-full border border-[#d7ff70]/20 bg-[#d7ff70]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#d7ff70]">
+          Realizacja klienta
+        </div>
+
+        <h3 className="text-3xl font-black">
+          Fenix Remonty
+        </h3>
+
+        <p className="mt-4 max-w-3xl leading-7 text-zinc-400">
+          Strona internetowa dla firmy remontowo-budowlanej. Projekt skupiony
+          na prezentacji usług, budowaniu zaufania oraz szybkim kontakcie
+          z potencjalnym klientem.
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-400">
+            Strona firmowa
+          </span>
+
+          <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-400">
+            Mobile First
+          </span>
+
+          <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-400">
+            Branża remontowa
+          </span>
+        </div>
+
+        <div className="mt-8 grid gap-4 border-t border-white/10 pt-6 md:grid-cols-3">
+  <div>
+    <div className="text-xs font-black uppercase tracking-[0.22em] text-zinc-500">
+      Rok
+    </div>
+    <div className="mt-2 font-black text-white">
+      2026
+    </div>
+  </div>
+
+  <div>
+    <div className="text-xs font-black uppercase tracking-[0.22em] text-zinc-500">
+      Typ
+    </div>
+    <div className="mt-2 font-black text-white">
+      Strona firmowa
+    </div>
+  </div>
+
+  <div>
+    <div className="text-xs font-black uppercase tracking-[0.22em] text-zinc-500">
+      Status
+    </div>
+    <div className="mt-2 font-black text-[#d7ff70]">
+      Online
+    </div>
+  </div>
+</div>
+
+        <a
+          href="https://www.fenixremonty.pl/"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-flex cursor-pointer rounded-full bg-[#d7ff70] px-6 py-3 font-black text-black transition hover:scale-[1.03]"
+        >
+          Zobacz realizację →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
            <section id="cennik" className="px-6 py-24 lg:py-32 scroll-mt-28">
   <div className="mx-auto max-w-7xl">
